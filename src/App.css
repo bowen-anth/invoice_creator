@@ -29,7 +29,7 @@ body {
   margin: 2rem;
 }
 
-.main-invoice-container {
+.main-task-total-label-container {
   display: flex;
   justify-content: space-between;
   margin: 2rem;
