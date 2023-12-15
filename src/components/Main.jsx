@@ -11,15 +11,18 @@ function Main() {
                 <button className="main-task-button">Mow Lawn: $20</button>
                 <button className="main-task-button">Pull Weeds: $30</button>
             </div>
-        <div className="main-invoice-container">
-            <span className="main-task-span">Task</span> <span className="main-total-span">Total</span>
-        </div>
-        <div className="main-task-container">
-            <span className="main-task-span">Wash Car</span> <span className="main-total-span">$10</span>
-        </div>
-        <div className="main-notes-span">
-            <span>We accept cash, credit card, or PayPal</span> <span className="main-total-amount-span">$600</span>
-        </div>
+            <div className="main-invoice-container">
+                <span className="main-task-span">Task</span> <span className="main-total-span">Total</span>
+            </div>
+            <div className="main-task-container">
+                <span className="main-task-span">Wash Car</span> <span className="main-total-span">$10</span>
+            </div>
+            <div className="main-task-total-container">
+                <span className="main-notes-span">Notes</span> <span className="main-total-amount-label-span">Total Amount</span>
+            </div>
+            <div className="main-notes-container">
+                <span className="main-notes-note-span">We accept cash, credit card, or PayPal</span> <span className="main-total-amount-span">$600</span>
+            </div>
         </main>
         <button className="main-send-button"><img src="./src/assets/mail.svg" alt="mail icon" width="10px" /> Send invoice</button>
     </>
