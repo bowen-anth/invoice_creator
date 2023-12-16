@@ -4,10 +4,10 @@ import { useState } from 'react'
 function Main() {
 
     const [formData, setFormData] = useState({
-        formData: "",
-        washCar: "",
-        mowLawn: "",
-        pullWeeds: ""
+        customTask: "",
+        washCar: false,
+        mowLawn: false,
+        pullWeeds: false
     })
 
     function handleChange(event) {
@@ -16,7 +16,16 @@ function Main() {
             ...prevFormData,
             [name]: type === "checkbox" ? checked : value
         }))
+        console.log(formData)
     }
+
+    // function checkboxFlip(event) {
+    //     const {name, value, type, checked} = event.target
+    //     setFormData(prevFormData => ({
+    //         ...prevFormData,
+    //         [name]: type === "checkbox" ? !value : ""
+    //     }))
+    // }
 
     function handleSubmit(event) {
         console.log(event)
@@ -36,7 +45,7 @@ function Main() {
                         <input 
                             type="checkbox" 
                             id="washCar"
-                            name="task"
+                            name="washCar"
                             onChange={handleChange}
                             value={formData.washCar}
                         />
@@ -44,7 +53,7 @@ function Main() {
                         <input 
                             type="checkbox" 
                             id="mowLawn"
-                            name="task"
+                            name="mowLawn"
                             onChange={handleChange}
                             value={formData.mowLawn}
                         />
@@ -52,7 +61,7 @@ function Main() {
                         <input 
                             type="checkbox" 
                             id="pullWeeds"
-                            name="task"
+                            name="pullWeeds"
                             onChange={handleChange}
                             value={formData.pullWeeds}
                         />
@@ -69,7 +78,21 @@ function Main() {
 
             {/* Dynamic Task & Total Container: Start */}
             <div className="main-task-container">
-                <span className="main-task-span">Wash Car</span> <span className="main-total-span">$10</span>
+                {formData.washCar &&
+                <div className="task-container">
+                    <span className="main-task-span">Wash Car</span> <span className="main-total-span">$10</span>
+                </div>
+                }
+                {formData.mowLawn &&
+                <div className="task-container">
+                    <span className="main-task-span">Mow Lawn</span> <span className="main-total-span">$20</span>
+                </div>
+                }
+                {formData.pullWeeds &&
+                <div className="task-container">
+                    <span className="main-task-span">Pull Weeds</span> <span className="main-total-span">$30</span>
+                </div>
+                }
             </div>
             {/* Dynamic Task & Total Container: End */}
 

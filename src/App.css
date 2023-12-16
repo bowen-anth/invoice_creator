@@ -93,6 +93,10 @@ input[type="checkbox"]:checked + label {
 }
 
 .main-task-container {
+  border-bottom: 2px solid red;
+}
+
+.task-container {
   display: flex;
   justify-content: space-between;
   margin: 2rem;
