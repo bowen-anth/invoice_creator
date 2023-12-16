@@ -10,12 +10,39 @@ function Main() {
         pullWeeds: false
     })
 
+    const [total, setTotal] = useState(0)
+
     function handleChange(event) {
         const {name, value, type, checked} = event.target
         setFormData(prevFormData => ({
             ...prevFormData,
             [name]: type === "checkbox" ? checked : value
         }))
+        setTotal((prevTotal) => {
+            if (checked) {
+                switch (name) {
+                    case 'washCar':
+                        return prevTotal + 10;
+                    case 'mowLawn':
+                        return prevTotal + 20;
+                    case 'pullWeeds':
+                        return prevTotal + 30;
+                    default:
+                        return prevTotal;
+                }
+            } else {
+                switch (name) {
+                    case 'washCar':
+                        return prevTotal - 10;
+                    case 'mowLawn':
+                        return prevTotal - 20;
+                    case 'pullWeeds':
+                        return prevTotal - 30;
+                    default:
+                        return prevTotal;
+                }
+            }
+        })
         console.log(formData)
     }
 
@@ -104,7 +131,7 @@ function Main() {
 
             {/* Notes and Total Amount Container: Start */}
             <div className="main-notes-container">
-                <span className="main-notes-note-span">We accept cash, credit card, or PayPal</span> <span className="main-total-amount-span">$600</span>
+                <span className="main-notes-note-span">We accept cash, credit card, or PayPal</span> <span className="main-total-amount-span">${total}</span>
             </div>
             {/* Notes and Total Amount Container: End */}
         </main>
