@@ -34,7 +34,7 @@ function Main() {
                         value={formData.customTask}  
                         />
                         <input 
-                            type="radio" 
+                            type="checkbox" 
                             id="washCar"
                             name="task"
                             onChange={handleChange}
@@ -42,7 +42,7 @@ function Main() {
                         />
                         <label htmlFor="washCar">Wash Car $10</label>
                         <input 
-                            type="radio" 
+                            type="checkbox" 
                             id="mowLawn"
                             name="task"
                             onChange={handleChange}
@@ -50,7 +50,7 @@ function Main() {
                         />
                         <label htmlFor="mowLawn">Mow Lawn $20</label>
                         <input 
-                            type="radio" 
+                            type="checkbox" 
                             id="pullWeeds"
                             name="task"
                             onChange={handleChange}
