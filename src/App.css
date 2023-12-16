@@ -92,8 +92,18 @@ input[type="checkbox"]:checked + label {
   font-size: 0.75rem;
 }
 
-.main-task-container {
-  border-bottom: 2px solid red;
+/* .main-task-container {
+  width: 29.4375rem;
+  height: 0.0625rem;
+  border-bottom: 2px solid #C3C6DB;
+} */
+
+hr {
+  height: 2px;
+  background-color: #C3C6DB;
+  border: none;
+  /* color: #918E9B; */
+  margin: 2rem;
 }
 
 .task-container {

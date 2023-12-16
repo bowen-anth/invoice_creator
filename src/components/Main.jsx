@@ -120,6 +120,7 @@ function Main() {
                     <span className="main-task-span">Pull Weeds</span> <span className="main-total-span">$30</span>
                 </div>
                 }
+                <hr />
             </div>
             {/* Dynamic Task & Total Container: End */}
 
