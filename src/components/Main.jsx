@@ -40,7 +40,7 @@ function Main() {
                             onChange={handleChange}
                             value={formData.washCar}
                         />
-                        <label for="washCar">Wash Car $10</label>
+                        <label htmlFor="washCar">Wash Car $10</label>
                         <input 
                             type="radio" 
                             id="mowLawn"
@@ -48,7 +48,7 @@ function Main() {
                             onChange={handleChange}
                             value={formData.mowLawn}
                         />
-                        <label for="mowLawn">Mow Lawn $20</label>
+                        <label htmlFor="mowLawn">Mow Lawn $20</label>
                         <input 
                             type="radio" 
                             id="pullWeeds"
@@ -56,7 +56,7 @@ function Main() {
                             onChange={handleChange}
                             value={formData.pullWeeds}
                         />
-                        <label for="pullWeeds">Pull Weeds $30</label>
+                        <label htmlFor="pullWeeds">Pull Weeds $30</label>
                     </div>
                     {/* Main Button Container: End */}
                 </form>
