@@ -22,17 +22,51 @@ body {
 }
 
 .main-button-container {
-  display: flex;
   gap: 15px;
   justify-content: center;
   text-align: center;
-  margin: 2rem;
+}
+
+.main-button-container label {
+  color: #4A4E74;
+  /* text-sm/leading-4/font-medium */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem; /* 114.286% */
+  padding: 10px 20px;
+  border-radius: 0.4375rem;
+  border: 1px solid #D5D4D8;
+  background: #FFF;
+  margin: 5px 10px;
+  cursor: pointer;
+  width: 8.94831rem;
+  height: 2.8125rem;
+  padding: 0.5625rem 0.8125rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+input[type="radio"] {
+  display: none;
+  position: absolute;
+  width: 100%;
+  appearance: none;
+}
+
+input[type="radio"]:checked + label {
+  border-radius: 0.4375rem;
+  border: 2px solid #4A4E74;
+  background: #FFF;
 }
 
 .main-task-total-label-container {
   display: flex;
   justify-content: space-between;
   margin: 2rem;
+  margin-top: 3rem;
   color: #918E9B;
   font-family: Inter;
   font-size: 0.75rem;
@@ -74,6 +108,7 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 1rem; /* 114.286% */
+  cursor: pointer;
 }
 
 .main-task-input {
@@ -89,7 +124,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 2.5rem; /* 200% */
-  margin: 1rem auto;
+  margin: 2rem auto;
   display: block;
   padding: 1rem;
 }

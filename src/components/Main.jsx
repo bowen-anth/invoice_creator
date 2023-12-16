@@ -1,18 +1,65 @@
+import React from "react"
 import { useState } from 'react'
 
 function Main() {
 
+    const [formData, setFormData] = useState({
+        formData: "",
+        washCar: "",
+        mowLawn: "",
+        pullWeeds: ""
+    })
+
+    function handleChange(event) {
+        const {name, value, type, checked} = event.target
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: type === "checkbox" ? checked : value
+        }))
+    }
+
+    function handleSubmit(event) {
+        console.log(event)
+    }
+
   return (
     <>
         <main className="main-container">
-            <input className="main-task-input" type="text" placeholder="Enter task" />
-            {/* Main Button Container: Start */}
-            <div className="main-button-container">
-                <button className="main-task-button">Wash Car: $10</button>
-                <button className="main-task-button">Mow Lawn: $20</button>
-                <button className="main-task-button">Pull Weeds: $30</button>
-            </div>
-            {/* Main Button Container: End */}
+                <form id="invoice-form" onSubmit={handleSubmit}>
+                    {/* Main Button Container: Start */}
+                    <div className="main-button-container">
+                        <input type="text"
+                        placeholder="Enter task" 
+                        className="main-task-input" 
+                        value={formData.customTask}  
+                        />
+                        <input 
+                            type="radio" 
+                            id="washCar"
+                            name="task"
+                            onChange={handleChange}
+                            value={formData.washCar}
+                        />
+                        <label for="washCar">Wash Car $10</label>
+                        <input 
+                            type="radio" 
+                            id="mowLawn"
+                            name="task"
+                            onChange={handleChange}
+                            value={formData.mowLawn}
+                        />
+                        <label for="mowLawn">Mow Lawn $20</label>
+                        <input 
+                            type="radio" 
+                            id="pullWeeds"
+                            name="task"
+                            onChange={handleChange}
+                            value={formData.pullWeeds}
+                        />
+                        <label for="pullWeeds">Pull Weeds $30</label>
+                    </div>
+                    {/* Main Button Container: End */}
+                </form>
 
             {/* Task / Total Label Container: Start */}
             <div className="main-task-total-label-container">
@@ -40,7 +87,7 @@ function Main() {
         </main>
         {/* Main Container: End */}
         {/* Submit Button */}
-        <button className="main-send-button"><img src="./src/assets/mail.svg" alt="mail icon" width="10px" /> Send invoice</button>
+        <button className="main-send-button" type="submit" form="invoice-form"><img src="./src/assets/mail.svg" alt="mail icon" width="10px" />Send invoice</button>
         {/* Submit Button */}
     </>
   )
