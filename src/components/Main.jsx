@@ -138,7 +138,7 @@ function Main() {
         </main>
         {/* Main Container: End */}
         {/* Submit Button */}
-        <button className="main-send-button" type="submit" form="invoice-form"><img src="./src/assets/mail.svg" alt="mail icon" width="10px" />Send invoice</button>
+        <button className="main-send-button" type="submit" form="invoice-form"><img src="mail.svg" alt="mail icon" width="10px" />Send invoice</button>
         {/* Submit Button */}
     </>
   )
